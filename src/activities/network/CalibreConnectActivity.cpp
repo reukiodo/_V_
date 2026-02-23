@@ -74,7 +74,7 @@ void CalibreConnectActivity::startWebServer() {
   state = CalibreConnectState::SERVER_STARTING;
   requestUpdate();
 
-  if (MDNS.begin(HOSTNAME)) {
+  if (MDNS.begin(hostname.c_str())) {
     // mDNS is optional for the Calibre plugin but still helpful for users.
     LOG_DBG("CAL", "mDNS started: http://%s.local/", HOSTNAME);
   }
