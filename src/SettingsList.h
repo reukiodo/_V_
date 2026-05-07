@@ -13,6 +13,30 @@
 // Each entry has a key (for JSON API) and category (for grouping).
 // ACTION-type entries and entries without a key are device-only.
 inline const std::vector<SettingInfo>& getSettingsList() {
+<<<<<<< HEAD
+  static const std::vector<SettingInfo> list = {
+      // --- Display ---
+      SettingInfo::Enum(StrId::STR_SLEEP_SCREEN, &CrossPointSettings::sleepScreen,
+                        {StrId::STR_DARK, StrId::STR_LIGHT, StrId::STR_CUSTOM, StrId::STR_COVER, StrId::STR_NONE_OPT,
+                         StrId::STR_COVER_CUSTOM},
+                        "sleepScreen", StrId::STR_CAT_DISPLAY),
+      SettingInfo::Enum(StrId::STR_SLEEP_COVER_MODE, &CrossPointSettings::sleepScreenCoverMode,
+                        {StrId::STR_FIT, StrId::STR_CROP}, "sleepScreenCoverMode", StrId::STR_CAT_DISPLAY),
+      SettingInfo::Enum(StrId::STR_SLEEP_COVER_FILTER, &CrossPointSettings::sleepScreenCoverFilter,
+                        {StrId::STR_NONE_OPT, StrId::STR_FILTER_CONTRAST, StrId::STR_INVERTED},
+                        "sleepScreenCoverFilter", StrId::STR_CAT_DISPLAY),
+      SettingInfo::Enum(StrId::STR_HIDE_BATTERY, &CrossPointSettings::hideBatteryPercentage,
+                        {StrId::STR_NEVER, StrId::STR_IN_READER, StrId::STR_ALWAYS}, "hideBatteryPercentage",
+                        StrId::STR_CAT_DISPLAY),
+      SettingInfo::Enum(
+          StrId::STR_REFRESH_FREQ, &CrossPointSettings::refreshFrequency,
+          {StrId::STR_PAGES_1, StrId::STR_PAGES_5, StrId::STR_PAGES_10, StrId::STR_PAGES_15, StrId::STR_PAGES_30},
+          "refreshFrequency", StrId::STR_CAT_DISPLAY),
+      SettingInfo::Enum(StrId::STR_UI_THEME, &CrossPointSettings::uiTheme,
+                        {StrId::STR_THEME_CLASSIC, StrId::STR_THEME_COMPACT, StrId::STR_THEME_LYRA, StrId::STR_THEME_LYRA_EXTENDED}, "uiTheme",
+                        StrId::STR_CAT_DISPLAY),
+      SettingInfo::Toggle(StrId::STR_SUNLIGHT_FADING_FIX, &CrossPointSettings::fadingFix, "fadingFix",
+=======
   static const std::vector<SettingInfo> list = [] {
     std::vector<SettingInfo> v = {
         // --- Display ---
@@ -27,6 +51,7 @@ inline const std::vector<SettingInfo>& getSettingsList() {
                           "sleepScreenCoverFilter", StrId::STR_CAT_DISPLAY),
         SettingInfo::Enum(StrId::STR_HIDE_BATTERY, &CrossPointSettings::hideBatteryPercentage,
                           {StrId::STR_NEVER, StrId::STR_IN_READER, StrId::STR_ALWAYS}, "hideBatteryPercentage",
+>>>>>>> origin/master
                           StrId::STR_CAT_DISPLAY),
         SettingInfo::Enum(
             StrId::STR_REFRESH_FREQ, &CrossPointSettings::refreshFrequency,
