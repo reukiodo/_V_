@@ -29,7 +29,6 @@ constexpr ThemeMetrics values = {.batteryWidth = 20,
                                  .buttonHintsHeight = 30,
                                  .sideButtonHintsWidth = 28,
                                  .progressBarHeight = 16,
-                                 .bookProgressBarHeight = 4,
                                  .keyboardKeyWidth = 30,
                                  .keyboardKeyHeight = 30,
                                  .keyboardKeySpacing = 0,
@@ -59,6 +58,9 @@ class CompactTheme : public BaseTheme {
   void drawButtonMenu(GfxRenderer& renderer, Rect rect, int buttonCount, int selectedIndex,
                       const std::function<std::string(int index)>& buttonLabel,
                       const std::function<UIIcon(int index)>& rowIcon) const override;
+  void CompactTheme::drawStatusBar(GfxRenderer& renderer, const float bookProgress, const int currentPage,
+                                const int pageCount, std::string title, const int paddingBottom,
+                                const int textYOffset) const override;
   void drawRecentBookCover(GfxRenderer& renderer, Rect rect, const std::vector<RecentBook>& recentBooks,
                            const int selectorIndex, bool& coverRendered, bool& coverBufferStored, bool& bufferRestored,
                            std::function<bool()> storeCoverBuffer) const override;
